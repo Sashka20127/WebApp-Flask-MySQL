@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{%block title%}
+<title>Просмотреть запись</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">
+	<form action="/rmrecords" method="POST">
+		<table>			
+			<thead>
+				<tr>
+					<th scope = "col">Номер записи</th>
+					<th scope = "col">Дата</th>
+					<th scope = "col">Название услуги</th>
+					<th scope = "col">ФИО пациента</th>
+					<th scope = "col">ФИО врача</th>
+					<th scope = "col">Цена</th>
+				</tr>
+			</thead>
+			<tbody>	
+				{% for row in reslist %}
+				<tr>					
+					<td data-label="Номер записи">{{row[0]}}</td>
+					<td data-label="Дата">{{row[1]}}</td>
+					<td data-label="Название услуги">						
+					<a href = "/service/{{row[2]}}">{{row[3].decode("utf-8")}}</a>						
+					</td>
+					<td data-label="ФИО пациента">							
+						<a href = "/patient/{{row[4]}}">{{row[5].decode("utf-8")}}</a>
+					</td>
+					<td data-label="ФИО врача">
+					<a href="/doctor/{{row[6]}}">{{row[7].decode("utf-8")}}</a>
+					</td>
+					<td data-label="Цена">{{row[8]}}</td>		
+				</tr>	
+				<input type="hidden" name = "act_num" value ="{{row[0]}}">
+				{% endfor %}					
+			</tbody>
+		</table>
+		<button  class="btn-5">Удалить запись</button>
+	</form>
+<form action="/dashboard">
+	<button class="btn-5">В меню</button> 
+</form>
+
+</div>
+{%endblock%}

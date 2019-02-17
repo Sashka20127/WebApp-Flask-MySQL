@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{%block title%}
+<title>Просмотреть пациента</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">	
+	<form action="/" method="POST">
+
+	<p>
+	{% for row in reslist1 %}		
+	Количество докторов: {{row[0]}}
+	{% endfor %}
+	</p>
+	<p>
+
+	{% for row in reslist2 %}		
+	Общее количество записей: {{row[0]}}
+	{% endfor %}
+	</p>
+	<p>
+
+	{% for row in reslist3 %}		
+	Количество предоставляемых услуг в отделении: {{row[0]}}
+	{% endfor %}
+	</p>					
+				
+	</form>
+<form action="/dashboard">
+	<button class="btn-5">В меню</button> 
+</form>
+
+</div>
+
+{%endblock%}

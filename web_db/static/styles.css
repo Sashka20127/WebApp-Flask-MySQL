@@ -1,0 +1,241 @@
+body {
+  background: #2ecc71;
+  font-family: "Centyre Gotic", sans-serif;
+}
+
+.container {
+  padding: 2em;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8%;
+  width: 40%;
+}
+
+/* GENERAL BUTTON STYLING */
+button,
+button::after {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+button {
+  background: none;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 1em auto;
+  padding: 2em 6em;
+  position: relative;
+  text-transform: uppercase;
+}
+
+[type="date"] {
+  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+button::before,
+button::after {
+  background: #fff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+button:hover {
+  color: #2ecc71;
+}
+
+/* BUTTON 5 */
+.btn-5 {
+  overflow: hidden;
+  min-width: 100%;
+}
+
+.btn-5::after {
+  /*background-color: #f00;*/
+  height: 100%;
+  left: -35%;
+  top: 0;
+  transform: skew(50deg);
+  transition-duration: 0.6s;
+  transform-origin: top left;
+  width: 0;
+}
+
+.btn-5:hover:after {
+  height: 100%;
+  width: 135%;
+}
+
+select{
+    font-size: 18px;
+    border:1px solid #ccc;
+    padding:10px;
+    margin-bottom:5px;
+    border-radius:5px;
+    width: 100%;
+
+}
+
+input {
+    font-size: 18px;
+    border:1px solid #ccc;
+    padding:10px;
+    margin-bottom:5px;
+    border-radius:5px;
+    width: 100%;
+}
+
+nav{
+    background: rgba(0,0,0,0.07);
+    font-size: 18px;
+    padding:2%;
+  padding-left: 7%;
+    margin-bottom:5px;
+    width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 0 0 2rem 0;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: auto;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+h3,h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-left: 15%;
+}
+
+
+p {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 0%;
+}
+
+label {
+  display: block;
+  text-align: left;
+  color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+nav a.active {
+  border-bottom: 2px solid #fff;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.2rem 0;
+  margin: 0 1rem;
+}
+
+
+.form-field {
+  border:7px solid #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 0 0 1rem 0;
+}
+.form-field:focus-within label {
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+
+}

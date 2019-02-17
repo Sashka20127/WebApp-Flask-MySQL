@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{%block title%}
+<title>Просмотреть запись</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">
+<form action="/slrecords" method="POST">	
+
+		<select name = "act_num">	
+
+		<option value ="%"> Выберите номер записи </option>		
+			{% for sel in reslist %}
+		<option  value="{{sel[0]}}">
+			{{sel[0]}}			
+		</option>
+			{% endfor %}
+		</select>
+
+		<input type="date" placeholder="Введите дату записи" name="service_date">
+
+		<select name = "services_code">	
+		<option value ="%"> Выберите название услуги </option>		
+			{% for sel in reslist1 %}
+		<option  value="{{sel[0]}}">
+			{{sel[1]}}			
+		</option>
+			{% endfor %}
+		</select>
+
+			<select name = "patients_code">	
+		<option value ="%"> Выберите имя пациента </option>		
+			{% for sel in reslist2 %}
+		<option  value="{{sel[0]}}">
+			{{sel[1]}}			
+		</option>
+			{% endfor %}
+		</select>
+
+		<select name = "doctors_code">	
+		<option value ="%"> Выберите имя доктора </option>		
+			{% for sel in reslist3 %}
+		<option  value="{{sel[0]}}">
+			{{sel[1]}}			
+		</option>
+			{% endfor %}
+		</select>
+
+		<input type="number" placeholder="Введите цену услуги" name="price">
+
+		<button class="btn-5">Найти запись</button> 
+</form>
+
+</form>
+<form action="/records">
+	<button class="btn-5">Назад</button> 
+</form>
+
+</div>
+
+{%endblock%}

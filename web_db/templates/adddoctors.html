@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{%block title%}
+<title>Добавить доктора</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">
+<form action="/adddoctors" method="POST">	
+
+		<input type="text" id="name" placeholder="ФИО доктора" name="doctorname" required>
+
+		<input type="text" id="info" placeholder="Название должности" name="doctorinfo" required>
+
+		<button class="btn-5">Добавить доктора</button> 
+</form>
+
+</form>
+<form action="/doctors">
+	<button class="btn-5">Назад</button> 
+</form>
+
+</div>
+
+{%endblock%}

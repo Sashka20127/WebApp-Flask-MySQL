@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{%block title%}
+<title>Записи</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">
+{% if not user==1 %}
+<form action="/addrecords">
+
+  <button class="btn-5">Добавить запись</button> 
+
+</form>
+{% endif %}
+<form action="/slrecords">
+
+  <button class="btn-5">Просмотреть запись</button> 
+
+</form>
+
+<form action="/dashboard">
+
+  <button class="btn-5">В меню</button> 
+
+</form>
+
+
+
+</div>
+{%endblock%}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{%block title%}
+<title>Добавить пациента</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">
+	<div class="formcont">
+<form action="/addpatients" method="POST">
+
+	<input type="text" id="name" placeholder="ФИО Пациента" name="patientname" required>
+
+	<input type="text" id="date" placeholder="Полная дата рождения" name="patientdate" required>
+
+    <button class="btn-5">Добавить пациента</button> 
+</form>
+	</div>
+
+</form>
+<form action="/patients">
+	<button class="btn-5">Назад</button> 
+</form>
+
+</div>
+
+{%endblock%}

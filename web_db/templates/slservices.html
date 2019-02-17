@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{%block title%}
+<title>Просмотреть услугу</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">
+<form action="/slservices" method="POST">	
+
+		<select name = "services_code">	
+
+		<option value="%"> Выберите название услуги </option>		
+			{% for sel in reslist %}
+		<option  value="{{sel[0]}}">
+			{{sel[1]}}			
+		</option>
+			{% endfor %}
+
+		</select>
+
+		<input type="number" placeholder="Введите цену услуги" name="price">
+		
+		<button class="btn-5">Найти услугу</button> 
+</form>
+
+</form>
+<form action="/services">
+	<button class="btn-5">Назад</button> 
+</form>
+
+</div>
+
+{%endblock%}

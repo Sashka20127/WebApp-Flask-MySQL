@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{%block title%}
+<title>Просмотреть услугу</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">
+	<form action="/rmservices" method="POST">
+
+	<table>
+	<thead>	
+		<tr>
+			<th scope = "col">Код услуги</th>
+			<th scope = "col">Название услуги</th>
+			<th scope = "col">Цена</th>			
+		</tr>
+	</thead>
+	 <tbody>
+		{% for row in reslist %}
+		<tr>
+			<td data-label="Код услуги">{{row[0]}}</td>
+			<td data-label="Название услуги">{{row[1].decode("utf-8")}}</td>
+			<td data-label="Цена">{{row[2]}}</td>
+		</tr>
+		<input type="hidden" name = "services_code" value ="{{row[0]}}">
+	</tbody>
+		{% endfor %}
+	</table>
+	{% if not user==1 %}
+	<button  class="btn-5">Удалить услугу</button> 
+	{% endif %}
+						
+	</form>
+<form action="/dashboard">
+	<button class="btn-5">В меню</button> 
+</form>
+
+</div>
+
+{%endblock%}

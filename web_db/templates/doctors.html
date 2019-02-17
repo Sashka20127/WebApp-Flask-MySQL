@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{%block title%}
+<title>Врачи</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">
+
+{% if not user==1 %}
+<form action="/adddoctors">
+
+  <button class="btn-5">Добавить доктора</button> 
+
+</form>
+{% endif %}
+
+<form action="/sldoctors">
+
+  <button class="btn-5">Просмотреть доктора</button> 
+
+</form>
+
+
+<form action="/dashboard">
+
+  <button class="btn-5">В меню</button> 
+
+</form>
+
+
+</div>
+{%endblock%}
+

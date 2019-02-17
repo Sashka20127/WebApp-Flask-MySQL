@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{%block title%}
+<title>Просмотреть доктора</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">
+	<form action="/rmdoctors" method="POST">
+		<table>
+			
+			<thead>
+				<tr>
+					<th scope = "col">Код доктора</th>
+					<th scope = "col">Имя доктора</th>
+					<th scope = "col">Должность</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for row in reslist %}
+				<tr>
+					<td data-label="Код доктора">{{row[0]}}</td>
+					<td data-label="Имя доктора">{{row[1].decode("utf-8")}}</td>
+					<td data-label="Должность">{{row[2].decode("utf-8")}}</td>
+				</tr>
+				<input type="hidden" name = "doctors_code" value ="{{row[0]}}">
+				{% endfor %}
+			</tbody>
+
+		</table>
+		{% if not user==1 %}
+		<button  class="btn-5">Удалить доктора</button> 
+		{% endif %}
+	</form>
+
+<form action="/dashboard">
+	<button class="btn-5">В меню</button> 
+</form>
+
+</div>
+
+{%endblock%}
+

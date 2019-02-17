@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{%block title%}
+<title>Добавить запись</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">
+<form action="/addrecords" method="POST">	
+		<input type="date" id="date" placeholder="Введите дату записи" name="recorddate" required>
+
+		<select name = "patients_code">	
+		<option> Выберите имя пациента </option>		
+			{% for sel in reslist2 %}
+		<option  value="{{sel[0]}}">
+			{{sel[1]}}			
+		</option>
+			{% endfor %}
+		</select>
+
+		<select name = "doctors_code">	
+		<option> Выберите имя доктора </option>		
+			{% for sel in reslist3 %}
+		<option  value="{{sel[0]}}">
+			{{sel[1]}}			
+		</option>
+			{% endfor %}
+		</select>
+		
+		<select name = "services_code" id = "options" onchange="getPrice()">	
+		<option> Выберите название услуги </option>		
+			{% for sel in reslist %}
+		<option  value="{{sel[0]}}">
+			{{sel[1]}}			
+		</option>
+			{% endfor %}
+		</select>
+
+  
+		<input type="number" id="pricename" placeholder="Введите стоимость услуги" name="price" required>
+
+		<button class="btn-5">Добавить запись</button> 
+
+</form>
+</form>
+<form action="/records">
+	<button class="btn-5">Назад</button> 
+</form>
+
+</div>
+<script type="text/javascript">
+	
+	var data = {{ reslist|tojson }};
+	function getPrice() {
+		var serv_name = document.getElementById('options').value
+		for (var i = 0; i < data.length; i++) {
+		if(data[i][0] == serv_name)
+			document.getElementById('pricename').value = data[i][2]
+	};
+}
+</script>
+{%endblock%}
+

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{%block title%}
+<title>Отделение платных услуг</title>
+{%endblock%}
+
+{%block abs%}
+<div class="container" style="margin-top: 0%;">
+<form action="/services">
+
+  <button class="btn-5">Услуги</button> 
+
+</form>
+
+<form action="/doctors">
+
+  <button class="btn-5">Врачи</button> 
+
+</form>
+{% if not user==1 %}
+<form action="/patients">
+
+  <button class="btn-5">Пациенты</button> 
+
+</form>
+
+<form action="/records">
+
+  <button class="btn-5">Записи</button> 
+
+</form>
+{% endif %}
+<form action="/stats">
+
+  <button class="btn-5">Статистика</button> 
+
+</form>
+
+<form action="/logout">
+
+  <button class="btn-5">Выход</button> 
+
+</form>
+
+</div>
+{%endblock%}

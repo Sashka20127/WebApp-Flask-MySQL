@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{%block title%}
+<title>Пациенты</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">
+
+<form action="/addpatients">
+
+  <button class="btn-5">Добавить пациента</button> 
+
+</form>
+
+<form action="/slpatients">
+
+  <button class="btn-5">Просмотреть пациента</button> 
+
+</form>
+
+<form action="/dashboard">
+
+  <button class="btn-5">В меню</button> 
+
+</form>
+
+
+</div>
+{%endblock%}
+

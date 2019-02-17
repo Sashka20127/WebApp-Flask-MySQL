@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{%block title%}
+<title>Отделение платных услуг</title>
+{%endblock%}
+
+{%block abs%}
+<div class="container">
+<form class="form-field" action="/regcheck" method="POST">
+
+<nav>
+      <a href="/">Авторизация</a>
+      <a href="/reg" class="active">Регистрация</a>
+</nav>
+
+<label for="login">Логин</label>
+<input type="text" id="login" name="login">
+
+<label for="password">Пароль</label>
+<input type="password" id="password" name="password">
+
+
+<button class = "btn-5">Зарегистрироваться</button>
+  
+
+</form>
+</div>
+{%endblock%}

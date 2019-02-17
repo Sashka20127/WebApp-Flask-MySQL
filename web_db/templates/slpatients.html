@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{%block title%}
+<title>Просмотреть пациента</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">
+<form action="/slpatients" method="POST">	
+
+		<select name = "patients_code">	
+		<option value="%"> Выберите имя пациента </option>		
+			{% for sel in reslist %}
+		<option  value="{{sel[0]}}">
+			{{sel[1]}}			
+		</option>
+			{% endfor %}
+		</select>
+
+		<input type="text" placeholder="Введите день рождения пациента" name="date">
+		
+		<button class="btn-5">Найти пациента</button> 
+</form>
+
+</form>
+<form action="/patients">
+	<button class="btn-5">Назад</button> 
+</form>
+
+</div>
+
+{%endblock%}

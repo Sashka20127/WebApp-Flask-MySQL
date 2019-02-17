@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{%block title%}
+<title>{{title}}</title>
+{%endblock%}
+
+{%block abs%}
+
+<div class="container">
+<form method="POST">	
+
+<h2>
+{{text2}}
+</h2>
+
+<h3 class="message">
+{{text3}}
+</h3>
+		
+</form>
+<form action="/dashboard">
+	<button class="btn-5">В меню</button> 
+</form>
+</div>
+
+
+{%endblock%}
